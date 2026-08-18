@@ -21,6 +21,7 @@
             <button onclick="livingroom()">Gå inn i stua</button>
             <button onclick="kitchen()">Gå inn på kjøkkenet</button>
             <button onclick="bathroom()">Gå inn på badet</button>
+            <button onclick="bedroom()">Gå inn på soverommet</button>
             `
         }
         function livingroom() {
@@ -39,7 +40,13 @@
         }
         function bathroom() {
             document.getElementById("leilighet").innerHTML = `
-            <h1>Du på badet</h1>
+            <h1>Du er på badet</h1>
+            <button onclick="hallway()">Gå til gangen</button>
+            `
+        }
+        function bedroom() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du på soverommet</h1>
             <button onclick="hallway()">Gå til gangen</button>
             `
         }
