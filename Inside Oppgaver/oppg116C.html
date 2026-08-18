@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 116C</title>
+</head>
+<body>
+    <div id="leilighet"></div>
+    <script>
+        function outside() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du er utenfor en leilighet</h1>
+            <button onclick="hallway()">Gå Inn</button>
+            `
+        }
+        function hallway() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du er i gangen</h1>
+            <button onclick="outside()">Gå ut</button>
+            <button onclick="livingroom()">Gå inn i stua</button>
+            <button onclick="kitchen()">Gå inn på kjøkkenet</button>
+            <button onclick="bathroom()">Gå inn på badet</button>
+            `
+        }
+        function livingroom() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du er i stua</h1>
+            <button onclick="kitchen()">Gå inn på kjøkkenet</button>
+            <button onclick="hallway()">Gå til gangen</button>
+            `
+        }
+        function kitchen() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du på kjøkkenet</h1>
+            <button onclick="livingroom()">Gå inn i stua</button>
+            <button onclick="hallway()">Gå til gangen</button>
+            `
+        }
+        function bathroom() {
+            document.getElementById("leilighet").innerHTML = `
+            <h1>Du på badet</h1>
+            <button onclick="hallway()">Gå til gangen</button>
+            `
+        }
+
+        outside()
+
+    </script>
+</body>
+</html>
