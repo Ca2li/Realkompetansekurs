@@ -66,28 +66,30 @@
       // 3. Gjøre beregningen
       // 4. Vise svaret i #svar
 
+      const svar = document.getElementById("svar");
+      
       function leggSammen() {
-        document.getElementById("svar").innerHTML = 
-        Number(document.getElementById("tall1").value) + 
-        Number(document.getElementById("tall2").value);
+        let tall1 = Number(document.getElementById("tall1").value);
+        let tall2 = Number(document.getElementById("tall2").value);
+        svar.innerHTML = tall1 + tall2;
       }
 
       function trekkFra() {
-        document.getElementById("svar").innerHTML = 
-        Number(document.getElementById("tall1").value) - 
-        Number(document.getElementById("tall2").value);
+        let tall1 = Number(document.getElementById("tall1").value);
+        let tall2 = Number(document.getElementById("tall2").value);
+        svar.innerHTML = tall1 - tall2;
       }
 
       function gang() {
-        document.getElementById("svar").innerHTML = 
-        Number(document.getElementById("tall1").value) * 
-        Number(document.getElementById("tall2").value);
+        let tall1 = Number(document.getElementById("tall1").value);
+        let tall2 = Number(document.getElementById("tall2").value);
+        svar.innerHTML = tall1 * tall2;
       }
 
       function del() {
-        document.getElementById("svar").innerHTML = 
-        Number(document.getElementById("tall1").value) / 
-        Number(document.getElementById("tall2").value);
+        let tall1 = Number(document.getElementById("tall1").value);
+        let tall2 = Number(document.getElementById("tall2").value);
+        svar.innerHTML = tall1 / tall2;
       }
 
       // Tips for å lese inputverdi:
