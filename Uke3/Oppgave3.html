@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Komponentbibliotek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 32px;
+            background: #95bfe9;
+        }
+
+        /* Lag CSS for disse klassene slik at siden ser presentabel ut:
+           .kort       — hvit boks med runde hjørner og skygge
+           .kort h2    — farget overskrift
+           .kort p     — grå brødtekst
+           .etikett    — liten farget merkelapp (badge) */
+
+        .kort {
+            background-color: white;
+            margin: 1rem;
+            padding: 20px;
+            border: solid, black, 2px;
+            border-radius: 16px;
+            box-shadow: 5px 5px 10px;
+            min-height: 12rem;
+            max-width: 20rem;
+        }
+
+        .kortH2 {
+            background-color: aquamarine;
+            border: solid 2px;
+            border-radius: 10px;
+            margin: 1rem;
+            padding: 5px;
+        }
+
+        .kortP {
+            color: gray;
+            margin: 1rem;
+            padding: 5px;
+        }
+
+        .etikett {
+            font-style: italic;
+            background-color: aqua;
+            border: dotted 2px;
+            border-radius: 10px;
+            margin: 1rem;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fagkort</h1>
+    <div id="output"></div>
+    <script>
+
+        // OPPGAVE: Funksjoner med returverdi = gjenbrukbare komponenter
+
+        // STEG 1:
+        // Lag en funksjon lagEtikett(tekst)
+        // Den skal RETURNERE en HTML-streng:
+        // "<span class='etikett'>" + tekst + "</span>"
+
+        function lagEtikett(tekst){
+            return "<span class='etikett'>" + tekst + "</span>";
+        }
+        
+        // STEG 2:
+        // Lag en funksjon lagKort(tittel, tekst, etikett)
+        // Den skal RETURNERE en HTML-streng for et kort
+        // Kortet skal inneholde:
+        // - en <h2> med tittelen
+        // - resultatet fra lagEtikett(etikett)
+        // - en <p> med teksten
+        // Husk class="kort" på ytterste div
+
+        function lagKort(tittel, tekst, etikett) {
+            return "<div class='kort'>" +
+            "<h2 class='kortH2'>" + tittel + "</h2>" +
+            lagEtikett(etikett) +
+            "<p class='kortP'>" + tekst + "</p>" +    
+            "</div>";
+        }
+
+        // STEG 3:
+        // Bruk de to funksjonene til å fylle #output med minst fire kort
+        // om temaer fra kurset (HTML, CSS, JavaScript, funksjoner, osv.)
+        // Eksempel:
+        // document.getElementById("output").innerHTML =
+        //     lagKort("HTML", "Strukturen på en nettside", "Grunnlag") +
+        //     lagKort(...) + ...
+
+        document.getElementById("output").innerHTML = 
+            lagKort("HTML", "Byggeblokkene til en nettside.", "Grunnlag") +
+            lagKort("CSS", "Utseende til en nettside.", "Style") + 
+            lagKort("JavaScript", "Funskjonaliteten til en nettside.", "Interaktivitet") +
+            lagKort("Variabler", "Informasjon nettsiden bruker for å bygges.", "True/False?");
+        
+        // STEG 4 (bonus):
+        // Lag en funksjon lagSeksjon(overskrift, innhold)
+        // som returnerer en seksjon med en <h2> og innhold
+        // Bruk den til å gruppere kortene i to seksjoner:
+        // "Web-teknologier" og "Programmering"
+
+    </script>
+</body>
+</html>
